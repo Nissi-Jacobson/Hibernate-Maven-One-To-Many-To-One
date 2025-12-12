@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<hibernate-mapping package="beans">
+
+ <class name="Department" table="dept">
+  <id name="deptNo" column="deptNo" type="integer">
+   <generator class="increment" />
+  </id>
+  <property name="deptName" type="string" unique="true"/>
+  <property name="loc" type="string" />
+  <bag name="empList" cascade="all">
+   <key column="deptNo"/>
+   <one-to-many class="Employee"/>
+  </bag>
+ </class>
+
+ <class name="Employee" table="emp">
+  <id name="eid" column="eid" type="integer">
+   <generator class="increment" />
+  </id>
+  <property name="ename" type="string" />
+  <property name="sal" type="double" />
+  <property name="desig" type="string" />
+  <many-to-one name="dept" class="Department" column="deptNo"/> 
+ </class>
+</hibernate-mapping>

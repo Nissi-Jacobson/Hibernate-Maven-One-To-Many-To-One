@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- ========================= -->
+        <!-- Database Connection -->
+        <!-- ========================= -->
+        <property name="hibernate.connection.driver_class">
+            org.mariadb.jdbc.Driver
+        </property>
+
+        <property name="hibernate.connection.url">
+            jdbc:mariadb://localhost:3306/hibernate_onetomany
+        </property>
+
+        <property name="hibernate.connection.username">
+            nissi
+        </property>
+
+        <property name="hibernate.connection.password">
+            6969
+        </property>
+
+        <!-- ========================= -->
+        <!-- Dialect -->
+        <!-- ========================= -->
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.MariaDBDialect
+        </property>
+
+        <!-- ========================= -->
+        <!-- Hibernate Settings -->
+        <!-- ========================= -->
+        <property name="hibernate.hbm2ddl.auto">
+            update
+        </property>
+
+        <property name="hibernate.show_sql">
+            true
+        </property>
+
+        <property name="hibernate.format_sql">
+            true
+        </property>
+
+        <property name="hibernate.current_session_context_class">
+            thread
+        </property>
+
+        <!-- ========================= -->
+        <!-- Entity Mapping -->
+        <!-- ========================= -->
+        <!-- Example -->
+        <!-- <mapping class="com.example.model.employee"/> -->
+        <mapping resource="Employee.hbm.xml"/>
+
+    </session-factory>
+</hibernate-configuration>
